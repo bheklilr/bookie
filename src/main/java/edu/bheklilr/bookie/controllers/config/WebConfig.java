@@ -1,4 +1,4 @@
-package edu.bheklilr.bookie;
+package edu.bheklilr.bookie.controllers.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;

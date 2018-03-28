@@ -5,13 +5,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class HomeController {
+public class AccountController {
 
-    private static final String VIEW = "index";
+    private static final String VIEW = "account";
 
-    @RequestMapping("/")
-    public String home(Model model) {
-        model.addAttribute("activeTab", "home");
+    @RequestMapping("/account")
+    public String account(Model model) {
+        model.addAttribute("activeTab", "account");
         return VIEW;
     }
 }

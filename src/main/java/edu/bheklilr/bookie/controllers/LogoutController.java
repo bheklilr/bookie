@@ -5,12 +5,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class HomeController {
+public class LogoutController {
 
     private static final String VIEW = "index";
 
-    @RequestMapping("/")
-    public String home(Model model) {
+    @RequestMapping("/logout")
+    public String logout(Model model) {
         model.addAttribute("activeTab", "home");
         return VIEW;
     }

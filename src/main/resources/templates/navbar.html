@@ -1,11 +1,31 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <body>
 <nav th:fragment="copy" class="navbar navbar-default">
     <ul class="nav nav-pills nav-justified">
-        <li role="presentation" th:class="${#strings.equals(activeTab, 'home')} ? active"><a href="/">Home</a></li>
-        <li role="presentation" th:class="${#strings.equals(activeTab, 'books')} ? active"><a href="/books">Books</a></li>
-        <li role="presentation" th:class="${#strings.equals(activeTab, 'account')} ? active"><a href="/account">Account</a></li>
+        <li role="presentation"
+            th:class="${#strings.equals(activeTab, 'home')} ? active">
+            <a href="/">Home</a>
+        </li>
+        <li role="presentation"
+            th:class="${#strings.equals(activeTab, 'books')} ? active">
+            <a href="/books">Books</a>
+        </li>
+        <li role="presentation"
+            sec:authorize="isAuthenticated()"
+            th:class="${#strings.equals(activeTab, 'account')} ? active">
+            <a href="/account">Account</a>
+        </li>
+        <li role="presentation"
+            sec:authorize="isAuthenticated()">
+            <a href="/logout">Logout</a>
+        </li>
+        <li role="presentation"
+            sec:authorize="isAnonymous()"
+            th:class="${#strings.equals(activeTab, 'login')} ? active">
+            <a href="/login">Login</a>
+        </li>
     </ul>
 </nav>
 </body>
