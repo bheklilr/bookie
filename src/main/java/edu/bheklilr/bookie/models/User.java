@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -22,19 +23,19 @@ public class User {
 	public User() {
 		this.username = "";
 		this.passwordHash = "";
-		this.books = new ArrayList<Book>();
+		this.books = new ArrayList<>();
 	}
 	
 	public User(String username, String passwordHash) {
 		this.username = username;
 		this.passwordHash = passwordHash;
-		this.books = new ArrayList<Book>();
+		this.books = new ArrayList<>();
 	}
 	
-	public User(String username, String passwordHash, List<Book> books) {
+	public User(String username, String passwordHash, Book... books) {
 		this.username = username;
 		this.passwordHash = passwordHash;
-		this.books = new ArrayList<Book>(books);
+		this.books = new new ArrayList<>(Arrays.asList(books));
 	}
 
 	public String getUsername() {
