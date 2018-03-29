@@ -35,7 +35,7 @@ public class User {
 	public User(String username, String passwordHash, Book... books) {
 		this.username = username;
 		this.passwordHash = passwordHash;
-		this.books = new new ArrayList<>(Arrays.asList(books));
+		this.books = new ArrayList<>(Arrays.asList(books));
 	}
 
 	public String getUsername() {
