@@ -1,11 +1,13 @@
 package edu.bheklilr.bookie.models;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 import org.hibernate.annotations.Type;
 
@@ -17,6 +19,7 @@ public class Book {
 	private UUID id;
 
 	private String title;
+	@ManyToMany
 	private List<Author> authors;
 	private int yearPublished;
 	
@@ -27,23 +30,18 @@ public class Book {
 	}
 	
 	public Book(String title, String author, int yearPublished) {
-		this.title = title;
-		this.authors = new ArrayList<Author>();
-		this.addAuthor(author);
-		this.yearPublished = yearPublished;
+		this(title, new Author(author), yearPublished);
 	}
 	
 	public Book(String title, Author author, int yearPublished) {
-		this.title = title;
-		this.authors = new ArrayList<Author>();
-		this.addAuthor(author);
-		this.yearPublished = yearPublished;
+		this(title, Arrays.asList(author), yearPublished);
 	}
 	
 	public Book(String title, List<Author> authors, int yearPublished) {
 		this.title = title;
 		this.authors = new ArrayList<Author>(authors);
 		this.yearPublished = yearPublished;
+		this.id = UUID.randomUUID();
 	}
 	
 	public void addAuthor(String author) {
