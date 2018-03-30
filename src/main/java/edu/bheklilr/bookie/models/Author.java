@@ -18,10 +18,11 @@ public class Author {
 	
 	public Author(String name) {
 		this.name = name;
+		this.id = UUID.randomUUID();
 	}
 	
 	public Author() {
-		this.name = "";
+		this("");
 	}
 
 	public String getName() {

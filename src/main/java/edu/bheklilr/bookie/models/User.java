@@ -23,21 +23,18 @@ public class User {
 	private List<Book> books;
 	
 	public User() {
-		this.username = "";
-		this.passwordHash = "";
-		this.books = new ArrayList<>();
+		this("", "");
 	}
 	
 	public User(String username, String passwordHash) {
-		this.username = username;
-		this.passwordHash = passwordHash;
-		this.books = new ArrayList<>();
+		this(username, passwordHash, new Book[] {});
 	}
 	
 	public User(String username, String passwordHash, Book... books) {
 		this.username = username;
 		this.passwordHash = passwordHash;
 		this.books = new ArrayList<>(Arrays.asList(books));
+        this.id = UUID.randomUUID();
 	}
 
 	public String getUsername() {
