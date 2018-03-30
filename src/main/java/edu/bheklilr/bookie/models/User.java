@@ -4,6 +4,7 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,6 +19,7 @@ public class User {
 
 	private String username;
 	private String passwordHash;
+	@ManyToMany
 	private List<Book> books;
 	
 	public User() {

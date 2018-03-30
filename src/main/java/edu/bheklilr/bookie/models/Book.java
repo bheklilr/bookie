@@ -6,6 +6,7 @@ import java.util.UUID;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 import org.hibernate.annotations.Type;
 
@@ -17,6 +18,7 @@ public class Book {
 	private UUID id;
 
 	private String title;
+	@ManyToMany
 	private List<Author> authors;
 	private int yearPublished;
 	
