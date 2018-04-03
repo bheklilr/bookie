@@ -9,7 +9,7 @@ public class HomeController {
 
     private static final String VIEW = "index";
 
-    @RequestMapping("/")
+    @RequestMapping("")
     public String home(Model model) {
         model.addAttribute("activeTab", "home");
         return VIEW;

@@ -12,8 +12,6 @@ import javax.persistence.EntityManagerFactory;
 import java.util.List;
 import java.util.UUID;
 
-@RestController
-@RequestMapping(path="resources/authors")
 public class AuthorsREST extends AbstractREST<Author> {
 
     @Autowired

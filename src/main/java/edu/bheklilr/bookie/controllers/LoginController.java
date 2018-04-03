@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class LoginController {
     private static final String VIEW = "login";
 
-    @RequestMapping("/login")
+    @RequestMapping("login")
     public String login(Model model) {
         model.addAttribute("activeTab", "home");
         return VIEW;

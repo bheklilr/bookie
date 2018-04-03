@@ -9,7 +9,7 @@ public class LogoutController {
 
     private static final String VIEW = "index";
 
-    @RequestMapping("/logout")
+    @RequestMapping("logout")
     public String logout(Model model) {
         model.addAttribute("activeTab", "home");
         return VIEW;

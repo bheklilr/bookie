@@ -14,7 +14,6 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 
 @SpringBootApplication
-@ComponentScan("org.springframework.security.crypto.bcrypt")
 public class Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
