@@ -9,7 +9,7 @@ public class AccountController {
 
     private static final String VIEW = "account";
 
-    @RequestMapping("/account")
+    @RequestMapping("account")
     public String account(Model model) {
         model.addAttribute("activeTab", "account");
         return VIEW;

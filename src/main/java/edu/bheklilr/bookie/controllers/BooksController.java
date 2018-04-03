@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class BooksController {
     private static final String VIEW = "books";
 
-    @RequestMapping("/books")
+    @RequestMapping(path="books")
     public String books(Model model) {
         model.addAttribute("activeTab", "books");
         return VIEW;
