@@ -7,14 +7,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 
 @SpringBootApplication
-@ComponentScan({"org.springframework.security.crypto.bcrypt"})
 public class Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
