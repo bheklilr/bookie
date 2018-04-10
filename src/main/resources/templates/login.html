@@ -14,7 +14,7 @@
 <div class="container" id="forms">
     <div class="row">
         <div class="col-sm-6">
-            <form id="loginForm">
+            <form action="#" th:action="@{/do-login}" th:object="${userLogin}" method="post" id="loginForm">
                 <h2>Log In</h2>
                 <div class="form-group">
                     <label for="username">Username</label>
@@ -28,7 +28,7 @@
             </form>
         </div>
         <div class="col-sm-6">
-            <form id="registerForm">
+            <form action="#" th:action="@{/register}" th:object="${userLogin}" method="post" id="registerForm">
                 <h2>Register</h2>
                 <div class="form-group">
                     <label for="registerUsername">Username</label>
